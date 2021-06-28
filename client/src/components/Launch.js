@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery, Query, gql } from "@apollo/client";
+import { useQuery, gql } from "@apollo/client";
 import { Link } from "react-router-dom";
 
 const LAUNCH_QUERY = gql`
@@ -35,15 +35,12 @@ function Launch(props) {
     launch_year,
     launch_date_local,
     launch_success,
-    rocket: { rocket_id, rocket_name, rocket_type },
+    rocket: { rocket_id, rocket_name, rocket_type, description },
   } = data.launch;
   return (
-    <div>
-      <h1 className="display-4 my-3">
-        <span className="text-dark">Mission: </span>
-        {mission_name}
-      </h1>
-      <h4 className="mb-3">Launch details</h4>
+    <div className="container root">
+      <h3 className="my-3 text-uppercase mission-name">{mission_name}</h3>
+      <h2 className="my-4 text-uppercase">Launch details</h2>
       <ul className="list-group">
         <li className="list-group-item">Flight number: {flight_number}</li>
         <li className="list-group-item">Launch year: {launch_year}</li>
@@ -54,14 +51,14 @@ function Launch(props) {
           </span>
         </li>
       </ul>
-      <h4 className="my-3">Rocket Details:</h4>
+      <h2 className="my-4 text-uppercase">Rocket details</h2>
       <ul className="list-group">
         <li className="list-group-item">Rocket ID: {rocket_id}</li>
         <li className="list-group-item">Rocket name: {rocket_name}</li>
         <li className="list-group-item">Rocket type: {rocket_type}</li>
       </ul>
       <hr />
-      <Link to="/" className="btn btn-secondary">
+      <Link to="/launches" className="btn btn-secondary">
         Back
       </Link>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import LaunchItem from "./LaunchItem";
 import MissinKey from "./MissionKey";
@@ -21,8 +22,8 @@ function Launches() {
   if (error) console.log(error);
 
   return (
-    <div>
-      <h1 className="display-4 my-3">Launches</h1>
+    <div className="container root">
+      <h2 className="display-4 my-3 lauches-title">Launches</h2>
       <MissinKey />
       <div>
         {data.launches.map((launch) => (

@@ -26,9 +26,90 @@ const LaunchType = new GraphQLObjectType({
 const RocketType = new GraphQLObjectType({
   name: "Rocket",
   fields: () => ({
+    id: { type: GraphQLInt },
+    active: { type: GraphQLBoolean },
     rocket_id: { type: GraphQLString },
     rocket_name: { type: GraphQLString },
+    description: { type: GraphQLString },
     rocket_type: { type: GraphQLString },
+    cost_per_launch: { type: GraphQLInt },
+    success_rate_pct: { type: GraphQLInt },
+    height: { type: HeightType },
+    diameter: { type: DiameterType },
+    mass: { type: MassType },
+    first_stage: { type: FirstStageType },
+    second_stage: { type: SecondStageType },
+    engines: { type: EnginesType },
+    landing_legs: { type: LandingLegsType },
+  }),
+});
+
+// Height type
+const HeightType = new GraphQLObjectType({
+  name: "Height",
+  fields: () => ({
+    meters: { type: GraphQLString },
+    feet: { type: GraphQLString },
+  }),
+});
+
+// Diameter type
+const DiameterType = new GraphQLObjectType({
+  name: "Diameter",
+  fields: () => ({
+    meters: { type: GraphQLString },
+    feet: { type: GraphQLString },
+  }),
+});
+
+// Mass type
+const MassType = new GraphQLObjectType({
+  name: "Mass",
+  fields: () => ({
+    kg: { type: GraphQLInt },
+    lb: { type: GraphQLInt },
+  }),
+});
+
+// FirstStage type
+const FirstStageType = new GraphQLObjectType({
+  name: "FirstStage",
+  fields: () => ({
+    engines: { type: GraphQLInt },
+    fuel_amount_tons: { type: GraphQLInt },
+    burn_time_sec: { type: GraphQLInt },
+    reusable: { type: GraphQLBoolean },
+  }),
+});
+
+// SecondStage type
+const SecondStageType = new GraphQLObjectType({
+  name: "SecondStage",
+  fields: () => ({
+    engines: { type: GraphQLInt },
+    fuel_amount_tons: { type: GraphQLInt },
+    burn_time_sec: { type: GraphQLInt },
+  }),
+});
+
+// Engines type
+const EnginesType = new GraphQLObjectType({
+  name: "Engines",
+  fields: () => ({
+    number: { type: GraphQLInt },
+    type: { type: GraphQLString },
+    version: { type: GraphQLString },
+    propellant_1: { type: GraphQLString },
+    propellant_2: { type: GraphQLString },
+  }),
+});
+
+// Landing legs type
+const LandingLegsType = new GraphQLObjectType({
+  name: "LandingLegs",
+  fields: () => ({
+    number: { type: GraphQLInt },
+    material: { type: GraphQLString },
   }),
 });
 
