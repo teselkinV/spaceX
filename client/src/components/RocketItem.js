@@ -21,7 +21,7 @@ function RocketItem({
         </div>
         <div className="col-md-3">
           <Link to={`/rocket/${rocket_id}`} className="btn">
-            Rocket Details
+            Rocket Details w
           </Link>
         </div>
       </div>
