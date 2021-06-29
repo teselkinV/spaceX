@@ -58,7 +58,6 @@ h2.lauches-title {
 }
 
 /* Carousel */
-/* .carousel-control-next,
-.carousel-control-prev {
-  display: none;
-} */
+.carousel-indicators {
+  bottom: -3.5rem !important;
+}

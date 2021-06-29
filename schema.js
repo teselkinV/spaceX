@@ -76,7 +76,7 @@ const FirstStageType = new GraphQLObjectType({
   name: "FirstStage",
   fields: () => ({
     engines: { type: GraphQLInt },
-    fuel_amount_tons: { type: GraphQLInt },
+    fuel_amount_tons: { type: GraphQLString },
     burn_time_sec: { type: GraphQLInt },
     reusable: { type: GraphQLBoolean },
   }),
@@ -87,8 +87,18 @@ const SecondStageType = new GraphQLObjectType({
   name: "SecondStage",
   fields: () => ({
     engines: { type: GraphQLInt },
-    fuel_amount_tons: { type: GraphQLInt },
+    fuel_amount_tons: { type: GraphQLString },
     burn_time_sec: { type: GraphQLInt },
+    thrust: { type: SecondStageThrust },
+  }),
+});
+
+// Second stage thrust
+const SecondStageThrust = new GraphQLObjectType({
+  name: "SecondStageThrust",
+  fields: () => ({
+    kN: { type: GraphQLInt },
+    lbf: { type: GraphQLInt },
   }),
 });
 
