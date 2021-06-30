@@ -6,7 +6,7 @@ import Launch from "./components/Launch";
 import Rockets from "./components/Rockets";
 import Rocket from "./components/Rocket";
 import MainPage from "./components/MainPage";
-import logo from "./logo.png";
+import logo from "./logo_black.png";
 
 const client = new ApolloClient({
   uri: "http://localhost:5000/graphql",
@@ -18,9 +18,10 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Link to="/">
+          <Link to="/" className=" a-logo text-center">
             <img src={logo} alt="spasex" className="logo" />
           </Link>
+
           <Route exact path="/" component={MainPage} />
           <Route exact path="/launches" component={Launches} />
           <Route exact path="/launch/:flight_number" component={Launch} />

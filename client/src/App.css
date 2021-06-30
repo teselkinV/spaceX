@@ -16,12 +16,18 @@ body {
   background-color: #303030 !important;
 }
 
+/* Logo */
+
+.a-logo {
+  width: 100%;
+  position: absolute;
+}
 .logo {
   width: 30rem;
-  display: block;
-  margin: auto;
+  background: transparent;
 }
 
+/* Background image */
 .launch-img {
   position: absolute;
   width: 100%;
@@ -30,6 +36,7 @@ body {
   opacity: 0.7;
 }
 
+/* Main page text */
 .main-links {
   height: 100vh;
 }
@@ -43,6 +50,11 @@ body {
   cursor: pointer;
 }
 
+.text-link:hover {
+  text-decoration: none;
+}
+
+/* Launch page */
 h2.lauches-title {
   text-transform: uppercase;
   font-weight: 500;
@@ -60,4 +72,12 @@ h2.lauches-title {
 /* Carousel */
 .carousel-indicators {
   bottom: -3.5rem !important;
+}
+
+/* Rocket */
+.description-rocket {
+  line-height: 2rem !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.5px;
+  font-size: 1.125rem;
 }
