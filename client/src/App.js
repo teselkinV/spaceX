@@ -17,17 +17,14 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
-          <Link to="/" className=" a-logo text-center">
-            <img src={logo} alt="spasex" className="logo" />
-          </Link>
-
-          <Route exact path="/" component={MainPage} />
-          <Route exact path="/launches" component={Launches} />
-          <Route exact path="/launch/:flight_number" component={Launch} />
-          <Route exact path="/rockets" component={Rockets} />
-          <Route exact path="/rocket/:rocket_id" component={Rocket} />
-        </div>
+        <Link to="/" className=" a-logo text-center">
+          <img src={logo} alt="spasex" className="logo" />
+        </Link>
+        <Route exact path="/" component={MainPage} />
+        <Route exact path="/launches" component={Launches} />
+        <Route exact path="/launch/:flight_number" component={Launch} />
+        <Route exact path="/rockets" component={Rockets} />
+        <Route exact path="/rocket/:rocket_id" component={Rocket} />
       </Router>
     </ApolloProvider>
   );
