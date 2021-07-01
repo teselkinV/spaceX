@@ -77,128 +77,160 @@ function Rocket(props) {
     landing_legs,
   } = data.rocket;
   return (
-    <div>
+    <div className="container root">
       <Carousel controls={false} indicators={true}>
         <Carousel.Item interval={10000000}>
-          <div className="container root">
-            <div>
+          <div className="row">
+            <div className="col-md-6">
               <h3 className="my-3 text-uppercase rocket-name">{rocket_name}</h3>
-              <p className="my-4 ">{description}</p>
+              <p className="my-4 description-rocket">{description}</p>
               <h2 className="my-4 text-uppercase">Rocket Details</h2>
-            </div>
-            <div className="row">
-              <div className="col-md-6">
-                <ul className="list px-0">
-                  <li className="border-bottom my-2 py-3">
-                    Height {height.meters} / {height.feet}
-                  </li>
-                  <li className="border-bottom my-2 py-3">
-                    Diameter {diameter.meters} / {diameter.feet}
-                  </li>
-                  <li className="border-bottom my-2 py-3">
-                    Mass {mass.kg} / {mass.lb}
-                  </li>
-                </ul>
-              </div>
+              <ul className="list px-0">
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">Height</span>
+                  {height.meters}m
+                  <span className="text-muted"> / {height.feet}ft</span>
+                </li>
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">Diameter</span>
+                  {diameter.meters}m
+                  <span className="text-muted"> / {diameter.feet}ft</span>
+                </li>
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">Mass</span>
+                  {mass.kg} kg
+                  <span className="text-muted">/ {mass.lb}lb</span>
+                </li>
+              </ul>
             </div>
           </div>
         </Carousel.Item>
         <Carousel.Item interval={10000000}>
-          <div className="container root">
-            <div>
-              <h3 className="my-3 text-uppercase rocket-name">{rocket_name}</h3>
-
-              <h2 className="my-4 text-uppercase">First stage</h2>
-            </div>
-            <div className="row">
-              <div className="col-md-6">
-                <ul className="list px-0">
-                  <li className="border-bottom my-2 py-3">
-                    Engines {first_stage.engines}
-                  </li>
-                  <li className="border-bottom my-2 py-3">
-                    Fuel amount {first_stage.fuel_amount_tons}
-                  </li>
-                  <li className="border-bottom my-2 py-3">
-                    Burn time {first_stage.burn_time_sec}
-                  </li>
-                  <li className="border-bottom my-2 py-3">
-                    Reusable{" "}
-                    <span
-                      className={
-                        first_stage.reusable ? "text-success" : "text-danger"
-                      }
-                    >
-                      {first_stage.reusable ? "Yes" : "No"}
+          <div>
+            <h3 className="my-3 text-uppercase rocket-name">{rocket_name}</h3>
+            <h2 className="my-4 text-uppercase">First stage</h2>
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <ul className="list px-0">
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">Engines</span>{" "}
+                  {first_stage.engines}
+                </li>
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">
+                    Fuel amount
+                  </span>{" "}
+                  {first_stage.fuel_amount_tons} tons
+                </li>
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">
+                    Burn time
+                  </span>{" "}
+                  {first_stage.burn_time_sec} sec
+                </li>
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">Reusable</span>{" "}
+                  <span
+                    className={
+                      first_stage.reusable ? "text-success" : "text-danger"
+                    }
+                  >
+                    {first_stage.reusable ? "Yes" : "No"}
+                  </span>
+                </li>
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">
+                    Landing legs
+                  </span>{" "}
+                  {landing_legs.number}
+                </li>
+                {landing_legs.material ? (
+                  <li className="border-bottom my-2 py-3 row">
+                    <span className="text-uppercase col-6 mr-auto">
+                      Landing legs material
+                    </span>{" "}
+                    <span className="text-capitalize">
+                      {landing_legs.material}
                     </span>
                   </li>
-                  <li className="border-bottom my-2 py-3">
-                    Landing legs {landing_legs.number}
-                  </li>
-                  {landing_legs.material ? (
-                    <li className="border-bottom my-2 py-3">
-                      Landing legs material {landing_legs.material}
-                    </li>
-                  ) : null}
-                </ul>
-              </div>
+                ) : null}
+              </ul>
             </div>
           </div>
         </Carousel.Item>
         <Carousel.Item interval={10000000}>
-          <div className="container root">
-            <div>
-              <h3 className="my-3 text-uppercase rocket-name">{rocket_name}</h3>
-
-              <h2 className="my-4 text-uppercase">Second stage</h2>
-            </div>
-            <div className="row">
-              <div className="col-md-6">
-                <ul className="list px-0">
-                  <li className="border-bottom my-2 py-3">
-                    Number of engines {second_stage.engines}
-                  </li>
-                  <li className="border-bottom my-2 py-3">
-                    Fuel amount {second_stage.fuel_amount_tons}
-                  </li>
-                  <li className="border-bottom my-2 py-3">
-                    Burn time {second_stage.burn_time_sec}
-                  </li>
-                  <li className="border-bottom my-2 py-3">
-                    Thrust {second_stage.thrust.kN}kN /{" "}
-                    {second_stage.thrust.lbf}lbf
-                  </li>
-                </ul>
-              </div>
+          <div>
+            <h3 className="my-3 text-uppercase rocket-name">{rocket_name}</h3>
+            <h2 className="my-4 text-uppercase">Engine Details</h2>
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <ul className="list px-0">
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">
+                    Number og engines
+                  </span>{" "}
+                  {engines.number}
+                </li>
+                <li className="border-bottom my-2 py-3 text-capitalize row">
+                  <span className="text-uppercase col-6 mr-auto">Type</span>{" "}
+                  {engines.type}
+                </li>
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">Version</span>{" "}
+                  {engines.version}
+                </li>
+                <li className="border-bottom my-2 py-3 text-capitalize row">
+                  <span className="text-uppercase col-6 mr-auto">
+                    First tank for propellant
+                  </span>{" "}
+                  {engines.propellant_1}
+                </li>
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">
+                    Secons tank for propellant
+                  </span>{" "}
+                  {engines.propellant_2}
+                </li>
+              </ul>
             </div>
           </div>
         </Carousel.Item>
         <Carousel.Item interval={10000000}>
-          <div className="container root">
-            <div>
-              <h3 className="my-3 text-uppercase rocket-name">{rocket_name}</h3>
-              <h2 className="my-4 text-uppercase">Engine Details</h2>
-            </div>
-            <div className="row">
-              <div className="col-md-6">
-                <ul className="list px-0">
-                  <li className="border-bottom my-2 py-3">
-                    Number of engines {engines.number}
-                  </li>
-                  <li className="border-bottom my-2 py-3 text-capitalize">
-                    Type {engines.type}
-                  </li>
-                  <li className="border-bottom my-2 py-3">
-                    Version {engines.version}
-                  </li>
-                  <li className="border-bottom my-2 py-3 text-capitalize">
-                    First tank for propellant {engines.propellant_1}
-                  </li>
-                  <li className="border-bottom my-2 py-3">
-                    Second tank for propellant {engines.propellant_2}
-                  </li>
-                </ul>
-              </div>
+          <div>
+            <h3 className="my-3 text-uppercase rocket-name">{rocket_name}</h3>
+            <h2 className="my-4 text-uppercase">Second stage</h2>
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <ul className="list px-0">
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">
+                    Number of engines
+                  </span>{" "}
+                  {second_stage.engines}
+                </li>
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">
+                    Fuel amount
+                  </span>
+                  {second_stage.fuel_amount_tons} tons
+                </li>
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">
+                    Burn time
+                  </span>
+                  {second_stage.burn_time_sec} sec
+                </li>
+                <li className="border-bottom my-2 py-3 row">
+                  <span className="text-uppercase col-6 mr-auto">Thrust</span>
+                  {second_stage.thrust.kN}kN{" "}
+                  <span className="text-muted">
+                    / {second_stage.thrust.lbf}lbf
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
         </Carousel.Item>
