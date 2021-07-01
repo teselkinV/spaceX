@@ -197,7 +197,7 @@ function Rocket(props) {
             </div>
           </div>
         </Carousel.Item>
-        <Carousel.Item interval={10000000}>
+        <Carousel.Item interval={100000000}>
           <div>
             <h3 className="my-3 text-uppercase rocket-name">{rocket_name}</h3>
             <h2 className="my-4 text-uppercase">Second stage</h2>
