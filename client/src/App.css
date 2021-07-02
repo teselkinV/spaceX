@@ -28,8 +28,8 @@ body {
   position: absolute;
 }
 .logo {
-  width: 30rem;
-  background: transparent;
+  width: 25rem;
+  padding-top: 1rem;
 }
 
 /* Background image */
@@ -48,9 +48,11 @@ body {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 700;
   cursor: pointer;
+  border: 0.3rem solid white;
+  padding: 0.25rem;
 }
 
 .text-link:hover {
@@ -83,4 +85,11 @@ h2.lauches-title {
   font-weight: 300 !important;
   letter-spacing: 0.5px;
   font-size: 1.125rem;
+}
+
+/* Mobile */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .logo {
+    width: 15rem;
+  }
 }

@@ -5,8 +5,7 @@ import launch from "../launch.png";
 function MainPage() {
   return (
     <div className="main-page">
-      {/* <img className="launch-img" src={launch} alt="spacex" /> */}
-      <div className="main-links row">
+      <div className="main-links row mr-0">
         <h1 className="col-md-6 text-center my-auto">
           <Link to="rockets" className="text-link">
             Rockets
